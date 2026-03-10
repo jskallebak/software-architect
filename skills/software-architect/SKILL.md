@@ -78,14 +78,28 @@ graph TB
     Queue --> Worker[Background Worker]
 ```
 
-#### Excalidraw (when MCP is available)
+#### Excalidraw (visual diagrams)
 
-If the `mcp_excalidraw` tools are available, also generate Excalidraw diagrams for a more visual, hand-drawn style. These are great for:
-- High-level system overviews (the "whiteboard" view)
-- Data flow diagrams
-- Deployment topology
+Generate Excalidraw diagrams alongside Mermaid for richer, interactive visuals. Excalidraw provides a hand-drawn whiteboard style that's great for system overviews, data flows, and deployment topology.
 
-Check for excalidraw MCP availability and use it alongside Mermaid — Mermaid stays in the markdown for portability, Excalidraw provides richer visuals as separate files.
+**How to use Excalidraw:**
+
+1. **Check if MCP is available**: Look for excalidraw tools (e.g., `mcp__excalidraw__create_element`, `mcp__excalidraw__create_from_mermaid`, or similar). If available, use them directly.
+
+2. **If not available, set it up**: Run this command to add the Excalidraw MCP server:
+   ```bash
+   claude mcp add excalidraw -- npx -y @cmd8/excalidraw-mcp --diagram ./architecture.excalidraw
+   ```
+   Tell the user they'll need to restart Claude Code for the MCP server to take effect, then they can re-run the skill.
+
+3. **Creating diagrams**: When excalidraw MCP tools are available, create these diagrams:
+   - **System architecture** — use `create_from_mermaid` if available (converts your Mermaid diagram to Excalidraw), or use `batch_create_elements` / `create_element` + `create_edge` to build the diagram node by node
+   - **Deployment topology** — show infrastructure layout with grouped elements
+   - **Data flow** — show how data moves through the system
+
+4. **Export**: Use `export_scene` or `export_to_image` to save the diagram as `.excalidraw` or `.png` alongside the ARCHITECTURE.md.
+
+Mermaid always stays in the markdown for portability. Excalidraw provides the richer visual companion files.
 
 ### Phase 4: Write ARCHITECTURE.md
 
@@ -174,7 +188,7 @@ Things that need resolution before or during implementation.
 
 ## Reference Files
 
-Five reference guides are available in the `references/` directory. Consult them during the relevant phases to make well-informed recommendations. Don't read all five for every project — pick the ones relevant to the decisions at hand.
+Six reference guides are available in the `references/` directory. Consult them during the relevant phases to make well-informed recommendations. Don't read all five for every project — pick the ones relevant to the decisions at hand.
 
 ### `references/system-architecture-patterns.md`
 **Read when**: Choosing between monolith vs microservices, deciding on event-driven vs request-response, selecting data patterns (CQRS, event sourcing, saga), or designing for resilience/scaling.
@@ -198,6 +212,9 @@ Covers: Architecture Decision Records (ADR templates, when to write them), C4 mo
 
 ### `references/architecture-decision-frameworks.md`
 **Read when**: Evaluating tradeoffs between architecture options, justifying decisions in the Key Decisions table, assessing risks, or when the project is complex enough to warrant structured analysis. Particularly valuable for the "Key Decisions & Tradeoffs" and "Open Questions" sections.
+
+### `references/excalidraw-diagrams.md`
+**Read when**: Excalidraw MCP tools are available (or the user asks for Excalidraw diagrams). Contains the tool reference, diagram layout strategies, color schemes, and setup instructions for users who don't have the MCP server installed.
 
 Covers: ATAM (Architecture Tradeoff Analysis Method), quality attributes and fitness functions, cost-benefit analysis for architecture, risk-driven architecture (George Fairbanks), evolutionary architecture principles, common architecture mistakes (distributed monolith, cargo culting, resume-driven development), decision heuristics (boring technology, Gall's Law, Conway's Law, YAGNI), and stakeholder communication techniques.
 
