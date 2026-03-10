@@ -1,0 +1,23 @@
+{
+  "skill_name": "software-architect",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I want to build a real-time collaborative markdown editor, like a simpler Notion. It's for my small startup team of 5.",
+      "expected_output": "Interview questions followed by a comprehensive ARCHITECTURE.md with real-time sync architecture, reasonable tech choices for a small team, Mermaid diagrams, and a phased build sequence.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Design the architecture for a high-traffic e-commerce platform. We need to handle 50k concurrent users, have an existing PostgreSQL database, and must be HIPAA compliant because we sell medical supplies.",
+      "expected_output": "Interview questions about existing systems, then a detailed ARCHITECTURE.md covering scale (50k concurrent), HIPAA compliance, PostgreSQL integration, caching, CDN, and comprehensive security section.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I'm a solo dev building a CLI tool that scrapes job postings from multiple sites and stores them in a local SQLite database. Python preferred.",
+      "expected_output": "Brief, targeted questions. A lean ARCHITECTURE.md that doesn't over-engineer — simple project structure, SQLite schema, CLI interface design, no unnecessary infrastructure sections.",
+      "files": []
+    }
+  ]
+}
