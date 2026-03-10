@@ -1,6 +1,6 @@
 # Software Architect Plugin
 
-A Claude Code plugin that designs software architecture for any project type. Given a project description, it interviews you about requirements, then produces a comprehensive `ARCHITECTURE.md` with component diagrams, database schemas, API contracts, folder structures, and phased build sequences.
+A Claude Code plugin that designs software architecture for new projects and reviews existing codebases. It can interview you about requirements and produce a comprehensive `ARCHITECTURE.md`, or analyze your existing codebase and generate an `ARCHITECTURE_REVIEW.md` with findings and recommendations.
 
 ## Install
 
@@ -31,7 +31,9 @@ git clone https://github.com/jskallebak/software-architect.git ~/.claude/skills/
 
 ## Usage
 
-Just ask Claude Code to design your project:
+### Design mode (new projects)
+
+Ask Claude Code to design your project:
 
 - "Design the architecture for a real-time chat app"
 - "I want to build an e-commerce platform with 50k users"
@@ -41,8 +43,23 @@ Just ask Claude Code to design your project:
 The skill will:
 
 1. **Interview you** — asks about scale, team, constraints, tech preferences
-2. **Consult references** — draws from 5 reference guides covering architecture patterns, design patterns, tech stacks, documentation best practices, and decision frameworks
+2. **Consult references** — draws from 6 reference guides covering architecture patterns, design patterns, tech stacks, documentation best practices, decision frameworks, and diagram creation
 3. **Generate ARCHITECTURE.md** — complete with Mermaid diagrams, tech stack tables, data models, API designs, and phased build sequences
+
+### Review mode (existing projects)
+
+Ask Claude Code to review your codebase:
+
+- "Review the architecture of this project"
+- "What do you think of this codebase?"
+- "Audit this project's structure"
+- "How can I improve the architecture?"
+
+The skill will:
+
+1. **Explore the codebase** — strategically reads entry points, configs, schemas, and module boundaries
+2. **Assess architecture** — evaluates structure, data design, API consistency, dependencies, security, scalability, and code quality
+3. **Generate ARCHITECTURE_REVIEW.md** — with executive summary, what's working well, prioritized improvements (critical/important/nice-to-have), pattern and tech stack assessments, and a recommended roadmap
 
 ## What's included
 
@@ -54,7 +71,8 @@ skills/software-architect/
     ├── design-patterns.md                      # GoF, DDD, clean architecture
     ├── tech-stack-decision-guide.md            # Framework/DB/infra decisions
     ├── architecture-documentation-guide.md     # ADRs, C4 model, arc42, RFCs
-    └── architecture-decision-frameworks.md     # ATAM, risk-driven, heuristics
+    ├── architecture-decision-frameworks.md     # ATAM, risk-driven, heuristics
+    └── excalidraw-diagrams.md                  # Excalidraw MCP integration guide
 ```
 
 ## Benchmark results
