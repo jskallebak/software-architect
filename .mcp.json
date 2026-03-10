@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "excalidraw": {
-      "command": "npx",
-      "args": ["-y", "@cmd8/excalidraw-mcp", "--diagram", "./architecture.excalidraw"]
-    }
-  }
-}
