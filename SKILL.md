@@ -174,7 +174,7 @@ Things that need resolution before or during implementation.
 
 ## Reference Files
 
-Three reference guides are available in the `references/` directory. Consult them during Phase 2 (Architecture Design) to make well-informed recommendations. Don't read all three for every project — pick the ones relevant to the decisions at hand.
+Five reference guides are available in the `references/` directory. Consult them during the relevant phases to make well-informed recommendations. Don't read all five for every project — pick the ones relevant to the decisions at hand.
 
 ### `references/system-architecture-patterns.md`
 **Read when**: Choosing between monolith vs microservices, deciding on event-driven vs request-response, selecting data patterns (CQRS, event sourcing, saga), or designing for resilience/scaling.
@@ -190,6 +190,16 @@ Covers: GoF creational/structural/behavioral patterns, concurrency patterns, cle
 **Read when**: Recommending specific technologies during the tech stack negotiation in Phase 1, or filling in the Tech Stack table in the ARCHITECTURE.md. Has decision matrices and "choose when / avoid when" guidance.
 
 Covers: frontend frameworks, backend frameworks (Node/Python/Java/Go/Rust/Ruby/Elixir/.NET), databases (7 categories including vector DBs), message brokers, cloud infrastructure comparison, auth solutions, and AI/ML integration patterns. Includes 5 ready-made stack templates (Startup MVP, Enterprise SaaS, Real-Time App, Content Site, ML Platform).
+
+### `references/architecture-documentation-guide.md`
+**Read when**: Structuring the ARCHITECTURE.md itself, deciding what level of detail to include, or when the project warrants ADRs, RFCs, or C4 diagrams. Also useful when the user asks about documentation best practices.
+
+Covers: Architecture Decision Records (ADR templates, when to write them), C4 model (all 4 levels with Mermaid examples), arc42 template (12 sections with priority by project size), RFC/design doc processes (Google/Uber/Spotify approaches), documentation anti-patterns, living documentation practices, and audience-aware writing for different stakeholders.
+
+### `references/architecture-decision-frameworks.md`
+**Read when**: Evaluating tradeoffs between architecture options, justifying decisions in the Key Decisions table, assessing risks, or when the project is complex enough to warrant structured analysis. Particularly valuable for the "Key Decisions & Tradeoffs" and "Open Questions" sections.
+
+Covers: ATAM (Architecture Tradeoff Analysis Method), quality attributes and fitness functions, cost-benefit analysis for architecture, risk-driven architecture (George Fairbanks), evolutionary architecture principles, common architecture mistakes (distributed monolith, cargo culting, resume-driven development), decision heuristics (boring technology, Gall's Law, Conway's Law, YAGNI), and stakeholder communication techniques.
 
 ## Guidelines
 
