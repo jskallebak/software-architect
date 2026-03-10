@@ -1,40 +1,32 @@
-# Software Architect Skill
+# Software Architect Plugin
 
-A Claude Code skill that designs software architecture for any project type. Given a project description, it interviews you about requirements, then produces a comprehensive `ARCHITECTURE.md` with component diagrams, database schemas, API contracts, folder structures, and phased build sequences.
+A Claude Code plugin that designs software architecture for any project type. Given a project description, it interviews you about requirements, then produces a comprehensive `ARCHITECTURE.md` with component diagrams, database schemas, API contracts, folder structures, and phased build sequences.
 
 ## Install
 
-### Option 1: Add to your project (recommended)
-
-Clone into your project's `.claude/skills/` directory:
+### As a Claude Code Plugin (recommended)
 
 ```bash
+claude plugin add --marketplace github:jskallebak/software-architect
+```
+
+Then enable it:
+```bash
+claude plugin enable software-architect
+```
+
+### Manual install
+
+Clone to your project or global skills directory:
+
+```bash
+# Project-local
 mkdir -p .claude/skills
 git clone https://github.com/jskallebak/software-architect.git .claude/skills/software-architect
-```
 
-Or add as a git submodule:
-
-```bash
-git submodule add https://github.com/jskallebak/software-architect.git .claude/skills/software-architect
-```
-
-### Option 2: Install globally
-
-Clone to your home `.claude/skills/` so it's available in all projects:
-
-```bash
+# Or global (all projects)
 mkdir -p ~/.claude/skills
 git clone https://github.com/jskallebak/software-architect.git ~/.claude/skills/software-architect
-```
-
-### Option 3: Reference in CLAUDE.md
-
-Add this to your project's `CLAUDE.md` or `~/.claude/CLAUDE.md`:
-
-```markdown
-## Skills
-When asked to design architecture, read and follow the skill at: .claude/skills/software-architect/SKILL.md
 ```
 
 ## Usage
@@ -55,7 +47,7 @@ The skill will:
 ## What's included
 
 ```
-software-architect/
+skills/software-architect/
 ├── SKILL.md                                    # Main skill instructions
 └── references/
     ├── system-architecture-patterns.md         # 30+ architecture patterns
